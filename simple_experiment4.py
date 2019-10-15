@@ -59,7 +59,8 @@ def main(model_type, **kwargs):
 
     model = train_model(train_data, train_target,
                         model_type=model_type, **kwargs)
-    print(evaluate_model(model, test_data, test_target))
+    print("Valid accuracy:", evaluate_model(model, valid_data, valid_target))
+    print("Test accuracy:", evaluate_model(model, test_data, test_target))
 
 
 def parse_args():

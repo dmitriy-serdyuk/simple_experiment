@@ -3,3 +3,4 @@ model:
   args:
     penalty: l2
     max_iter: 1000
+    random_state: 123

@@ -56,12 +56,13 @@ def main(model_type):
         train_data, train_target, test_size=0.2, random_state=0)
 
     model = train_model(train_data, train_target, model_type=model_type)
-    print(evaluate_model(model, test_data, test_target))
+    print("Valid accuracy:", evaluate_model(model, valid_data, valid_target))
+    print("Test accuracy:", evaluate_model(model, test_data, test_target))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model-type', choices=['logistic', 'linear_regression'])
+    parser.add_argument('--model-type', choices=['logistic', 'kn'])
 
     args = parser.parse_args()
     main(args.model_type)
